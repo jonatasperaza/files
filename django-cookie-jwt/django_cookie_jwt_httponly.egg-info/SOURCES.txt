@@ -1,6 +1,0 @@
-pyproject.toml
-django_cookie_jwt_httponly.egg-info/PKG-INFO
-django_cookie_jwt_httponly.egg-info/SOURCES.txt
-django_cookie_jwt_httponly.egg-info/dependency_links.txt
-django_cookie_jwt_httponly.egg-info/requires.txt
-django_cookie_jwt_httponly.egg-info/top_level.txt

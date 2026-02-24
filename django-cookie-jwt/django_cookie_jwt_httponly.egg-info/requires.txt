@@ -1,9 +1,0 @@
-Django>=4.2
-djangorestframework>=3.14
-djangorestframework-simplejwt>=5.3
-
-[dev]
-pytest
-pytest-django
-black
-ruff
