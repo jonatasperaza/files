@@ -1,0 +1,40 @@
+{
+  "name": "vue-cookie-jwt",
+  "version": "0.1.0",
+  "description": "Autenticação JWT via cookies HTTP-only para Vue 3 + Axios",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["vue", "vue3", "jwt", "cookie", "authentication", "axios", "composable"],
+  "authors": [
+    { "name": "Jonatas Silva Peraza", "email": "jonatassilvaperaza@gmail.com" },
+    { "name": "João Victor De Souza", "email": "joaovssouza59@gmail.com" }
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "axios": "^1.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue-router": { "optional": true }
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0"
+  }
+}

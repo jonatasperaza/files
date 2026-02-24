@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-cookie-jwt-httponly"
+version = "0.1.0"
+description = "Autenticação JWT via cookies HTTP-only para Django REST Framework e simplejwt."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Jonatas Silva Peraza", email = "jonatassilvaperaza@gmail.com" }, { name = "João Victor De Souza", email = "joaovssouza59@gmail.com"}]
+keywords = ["django", "jwt", "cookie", "authentication", "rest-framework", "simplejwt"]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP :: Session",
+]
+dependencies = [
+    "Django>=4.2",
+    "djangorestframework>=3.14",
+    "djangorestframework-simplejwt>=5.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-django", "black", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/jonatasperaza/django-cookie-jwt"
+Issues = "https://github.com/jonatasperaza/django-cookie-jwt/issues"
+
+[tool.setuptools.packages.find]
+include = ["django_cookie_jwt*"]
+
