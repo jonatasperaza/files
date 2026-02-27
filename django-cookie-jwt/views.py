@@ -29,7 +29,7 @@ class CookieTokenObtainPairView(SetAuthCookieMixin, TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
         if response.status_code == 200:
-            response.data = {"detail": "Login realizado com sucesso."}
+            response.data["detail"] = "Login realizado com sucesso."
         return response
 
 
@@ -46,7 +46,7 @@ class CookieTokenRefreshView(APIView):
     """
 
     def post(self, request, *args, **kwargs):
-        refresh_token = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME())
+        refresh_token = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME)
 
         if not refresh_token:
             return Response({"detail": "Refresh token ausente."}, status=401)
@@ -78,7 +78,7 @@ class CookieTokenLogoutView(ClearAuthCookieMixin, APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        refresh_token = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME())
+        refresh_token = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME)
 
         if refresh_token:
             try:

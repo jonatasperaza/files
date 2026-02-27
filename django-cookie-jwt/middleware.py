@@ -37,8 +37,8 @@ class AutoRefreshJWTMiddleware(MiddlewareMixin):
 
         from .mixins import set_auth_cookies
 
-        access_raw = request.COOKIES.get(cookie_settings.AUTH_COOKIE_NAME())
-        refresh_raw = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME())
+        access_raw = request.COOKIES.get(cookie_settings.AUTH_COOKIE_NAME)
+        refresh_raw = request.COOKIES.get(cookie_settings.REFRESH_COOKIE_NAME)
 
         if not access_raw or not refresh_raw:
             return response

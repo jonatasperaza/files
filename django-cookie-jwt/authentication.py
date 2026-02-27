@@ -30,7 +30,7 @@ class CookieJWTAuthentication(JWTAuthentication):
                 return self.get_user(validated_token), validated_token
 
         # 2. Tenta cookie HTTP-only
-        raw_token = request.COOKIES.get(cookie_settings.AUTH_COOKIE_NAME())
+        raw_token = request.COOKIES.get(cookie_settings.AUTH_COOKIE_NAME)
         if raw_token is None:
             return None
 

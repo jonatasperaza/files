@@ -16,25 +16,25 @@ def set_auth_cookies(response: HttpResponse, access_token: str, refresh_token: s
         refresh_token: JWT refresh token (opcional).
     """
     common = dict(
-        httponly=cookie_settings.AUTH_COOKIE_HTTP_ONLY(),
-        secure=cookie_settings.AUTH_COOKIE_SECURE(),
-        samesite=cookie_settings.AUTH_COOKIE_SAMESITE(),
-        path=cookie_settings.AUTH_COOKIE_PATH(),
-        domain=cookie_settings.AUTH_COOKIE_DOMAIN(),
+        httponly=cookie_settings.AUTH_COOKIE_HTTP_ONLY,
+        secure=cookie_settings.AUTH_COOKIE_SECURE,
+        samesite=cookie_settings.AUTH_COOKIE_SAMESITE,
+        path=cookie_settings.AUTH_COOKIE_PATH,
+        domain=cookie_settings.AUTH_COOKIE_DOMAIN,
     )
 
     response.set_cookie(
-        cookie_settings.AUTH_COOKIE_NAME(),
+        cookie_settings.AUTH_COOKIE_NAME,
         access_token,
-        max_age=cookie_settings.AUTH_COOKIE_ACCESS_MAX_AGE(),
+        max_age=cookie_settings.AUTH_COOKIE_ACCESS_MAX_AGE,
         **common,
     )
 
     if refresh_token is not None:
         response.set_cookie(
-            cookie_settings.REFRESH_COOKIE_NAME(),
+            cookie_settings.REFRESH_COOKIE_NAME,
             refresh_token,
-            max_age=cookie_settings.AUTH_COOKIE_REFRESH_MAX_AGE(),
+            max_age=cookie_settings.AUTH_COOKIE_REFRESH_MAX_AGE,
             **common,
         )
 
@@ -44,11 +44,11 @@ def clear_auth_cookies(response: HttpResponse) -> None:
     Remove os cookies de autenticação da resposta HTTP.
     Usado tipicamente na view de logout.
     """
-    path = cookie_settings.AUTH_COOKIE_PATH()
-    domain = cookie_settings.AUTH_COOKIE_DOMAIN()
+    path = cookie_settings.AUTH_COOKIE_PATH 
+    domain = cookie_settings.AUTH_COOKIE_DOMAIN
 
-    response.delete_cookie(cookie_settings.AUTH_COOKIE_NAME(), path=path, domain=domain)
-    response.delete_cookie(cookie_settings.REFRESH_COOKIE_NAME(), path=path, domain=domain)
+    response.delete_cookie(cookie_settings.AUTH_COOKIE_NAME, path=path, domain=domain)
+    response.delete_cookie(cookie_settings.REFRESH_COOKIE_NAME, path=path, domain=domain)
 
 
 class SetAuthCookieMixin:
